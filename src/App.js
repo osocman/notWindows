@@ -1,31 +1,22 @@
-import './App.css';
-import { useState } from 'react';
-import Desktop from './components/Desktop';
-import Taskbar from './components/Taskbar';
-import Window from './components/Window';
+import "./App.css";
+import { useState } from "react";
+import Desktop from "./components/Desktop";
+import Taskbar from "./components/Taskbar";
+import { WindowsProvider } from "./contexts/WindowsContext";
 
 function App() {
-  const [windows, setWindows] = useState([]);
-
   const [theme, setTheme] = useState({
-    backgroundImage: `${process.env.PUBLIC_URL}/src/resources/windows-10-bg-default.jpg`
+    backgroundImage: `${process.env.PUBLIC_URL}/src/resources/windows-10-bg-default.jpg`,
   });
-
-  const createWindow = (app) => {
-    setWindows((prevWindows) => {
-      return [...prevWindows, <Window>{app}</Window>]
-    });
-  };
 
   return (
     <div className="App">
-
-      <Desktop theme={theme} windows={windows} />
-
-      <Taskbar theme={theme} windows={windows} />
-
+      <WindowsProvider>
+        <Desktop theme={theme} />
+        <Taskbar theme={theme} />
+      </WindowsProvider>
     </div>
   );
-};
+}
 
 export default App;

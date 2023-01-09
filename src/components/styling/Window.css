@@ -1,0 +1,51 @@
+.Window {
+  position: absolute;
+  width: 720px;
+  height: 400px;
+  background: var(--color-main_bright3);
+  inset: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.titlebar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-main-text);
+  height: 35px;
+  background: var(--color-main_bright1);
+}
+
+.title {
+  margin-left: 15px;
+}
+
+.window-sizer {
+  display: flex;
+}
+
+.window-sizer > div{
+  width: 45px;
+  height: 35px;
+}
+
+.window-sizer > div:hover {
+  background-color: var(--color-main_bright2);
+  cursor: pointer;
+}
+
+.window-sizer > div.close:hover {
+  background-color: crimson;
+}
+
+.window-sizer p {
+  position: relative;
+  inset: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.window-sizer .close p {
+  font-size: 12px;
+}

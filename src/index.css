@@ -1,3 +1,12 @@
+:root {
+  --color-main: #212121;
+  --color-main_bright1: #303030;
+  --color-main_bright2: #4a4a4a;
+  --color-main_bright3: #545454;
+
+  --color-main-text: #ffffff;
+}
+
 * {
   margin: 0;
   padding: 0;
